@@ -4,6 +4,12 @@ RUN apk add --update --no-cache curl bind-tools jq dos2unix
 
 WORKDIR /usr/src/app
 
+ARG LOGIN
+ENV LOGIN=$LOGIN
+
+ARG PASSWORD
+ENV PASSWORD=$PASSWORD
+
 COPY dynhost.sh .
 COPY DDNS.json .
 
