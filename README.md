@@ -78,8 +78,8 @@ CMD ["crond", "-f"]
 version: '3'
 
 services:
-  ovh-dynhost:
-    container_name: dynhost
+  ovh-dynhosts:
+    container_name: ovh-dynhosts
     restart: unless-stopped
     build:
       dockerfile: Dockerfile
