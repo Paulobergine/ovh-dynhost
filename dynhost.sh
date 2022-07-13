@@ -1,10 +1,10 @@
 #!/bin/sh
 
-DDNS=`cat DDNS.json | jq '.DDN'`
+DDNS=`cat /usr/src/app/DDNS.json | jq '.DDN'`
 
 for DDN in $DDNS
 do
-  echo "Checking IP" >> dynhost.log
+  echo "Checking IP" >> /usr/src/app/dynhost.log
 
   IP=$(dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr -d \")
   CURRENT_IP=$(dig +short $DDN)
