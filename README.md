@@ -21,6 +21,22 @@ docker run \
   paulobergine/ovh-dynhosts
 ```
 
+**Or via docker-compose:**
+
+```yml
+version: '3'
+
+services:
+  ovh-dynhosts:
+    image: paulobergine/ovh-dynhosts:latest
+    container_name: ovh-dynhosts
+    restart: unless-stopped
+    environment:
+      DDNS: domain.example.com,subdomain.example.com,otherdomain.com
+      LOGIN: login
+      PASSWORD: password
+```
+
 Of course you need to insert your credentials.
 
 This will update the dynhost every 15 minutes if the ip changed.
