@@ -1,7 +1,5 @@
 #!/bin/sh
 
-DDNS=`cat /usr/src/app/DDNS.json | jq '.DDN'`
-
 for DDN in $DDNS
 do
   echo "Checking IP" >> /usr/src/app/dynhost.log
