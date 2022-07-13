@@ -4,12 +4,6 @@ RUN apk add --update --no-cache curl bind-tools jq dos2unix
 
 WORKDIR /usr/src/app
 
-ENV DDNS=$DDNS
-
-ENV LOGIN=$LOGIN
-
-ENV PASSWORD=$PASSWORD
-
 COPY dynhost.sh .
 
 RUN chmod +x ./dynhost.sh
