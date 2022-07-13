@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  ovh-dynhosts:
+    image: paulobergine/ovh-dynhosts:latest
+    container_name: ovh-dynhosts
+    restart: unless-stopped
+    environment:
+      DDNS: domain.example.com,subdomain.example.com,otherdomain.com
+      LOGIN: login
+      PASSWORD: password
